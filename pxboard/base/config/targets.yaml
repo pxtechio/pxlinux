@@ -32,6 +32,6 @@ BuildCommand:
     - BaseImage
     - TargetImage
     - U-Boot
-    - DeviceTrees
+    - RootFS
     - Packages
     - Scripts

@@ -9,8 +9,8 @@ Targets:
         url: https://code-ing.com/pixierepo/release/images/latest/PixieQP4GCoreImage.zip
       U-Boot:
         path: assets/uboot/u-boot-dtb-qp4.imx
-      DeviceTrees:
-        path: assets/device-trees #Symlink must be updated by script in Scripts
+      RootFS:
+        path: assets/rootfs #Directory structure in this path is preserved from '/'. Destination can't be symlink.
       Packages:
         path: assets/packages #All .pkg.tar.xz files and packages listed in pacman_packages.txt will be installed.
       Scripts:
@@ -33,6 +33,6 @@ BuildCommand:
     - BaseImage
     - TargetImage
     - U-Boot
-    - DeviceTrees
+    - RootFS
     - Packages
     - Scripts
