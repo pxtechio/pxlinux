@@ -16,16 +16,6 @@ Targets:
       Scripts:
         path: assets/update-scripts
 
-  #Minimal build
-  # PXBoardDUO:
-  #   Name: PXBoardDUP
-  #   TargetImage: assets/images/PXBoardDUO-latest.img
-  #   SkipUpdate: False
-  #   Assets:
-  #     BaseImage:
-  #       path: assets/images/PixieDLCoreImage-2019-01-25.img
-  #       url: https://code-ing.com/pixierepo/release/images/latest/PixieDLCoreImage.zip
-
 
 BuildCommand:
   cmd: helper_scripts/build_img.sh
