@@ -1,0 +1,29 @@
+dist: xenial
+language: generic
+sudo: required
+go:
+  - stable
+services:
+  - docker
+env:
+  - secure: "TnxC7H4fbvNxO+dS5j/y9ZWbmP6jZzQCyCc+zkxLhyuPKLP2pCfnk9PLsBDNg830pfNvLI//7QWaFVToTRO4JAuqSjcmasn60bRh2kDb2tGA3T6aRCEFlahW9QetukHaOIx3UKO+HG2tP35q+uWRx8gikoiTOGdcgTAhS8BY5X5MzpYTMJuu7auaf9QNXwrNDHoj0cfpa+tnORQ1fTzpL/6BA59RGcp3vP8Q8f066DELIQ+CNAWrLMI3IlGyk2gB3Gze6FmZJMxiu31rKLo32jm5mjQzGpqUTOvZOgMKvbsdSFPF9LeMhVnmazpeRq5xW4Z467vih7Ym0FiOnoQRtl4qKpL1s0cfkEoPWIPHuHygIq8wfFJR3G6SnLFl0IOj/0Z5PgD32NSn0SeKPSieOYnHh1ThZtWNK4fxL3T146tz+r3xX4VeLIlp8xFQ65oO2z20nnfIek4lNR/UeYQB1zQO5lkMZ4DabL89f/XhwoLFKbD+8103kCCLqBWFyhVKZ+vVbi59L+aq7DZrl1l5PAdv39ZxLkw5MOrUuOgNTnDSi/Q5oiAw9AxzG3Fc5yNuygRL6+FkceoDBmRsxZgnSyjY7BBnHz3ORHruUGT4+uqeiySOl6v9U/O+gnlP7FM2z7JVPwaCxcTN2fMbrKz7Zz1N72wnyHecoRbdalEEz08="
+  - secure: "k9VRzS9yhDIFRRDLSiaWj1V17UIyZtS0xSrPhLW8d6/ytyb35qKlOGWA8v9K/Rmz1ny/H3O7HYS0eBKNpQrNX1L77RG+ffvreuF41LOBHkax5UtCS0+v4FwTlCczC+E/G8Hgc5nLs3UCqP5A3W7cCbVLOV6bRqsNij9asJ7d8cFPvdhu5FyJQ0UHwM3Sz0k2yLPGVhSqLoCHwIuHbqg3/lbmLrXarQarH8BVa5TI1T3oeKkN0WYwMSi9M3+h+H9UiqpanHoRCbbsRpZRTnT3JMjaero2FZujXSxOvJbRdoNrf78v40MTSXGYpyVYwRvM8TAbEWYGyQ4p3KPiQXN+cfnQxPh0NtHI/Vlk0890kDpYxxWbcMkTiWvf13LfNxMfUF15/s5qG4SD0T+5ZwLK3zhGYWlPPJ6UK4QRXAu5EjG1W54ZrFPz2EnsI1Erurx2EPWhecbdffdLoBI/IvKdKZeqaciENWeN2s2396HsfrzGH4OpQFmV2chqxgKWZ89tm2ahUN57PsT+8NAOMVPkzsGWlbYg2ywSbbnZpPq4N/p7cIR2/qvjX+7wHHoiPWMszJlfrK+XRrVb2jsfw+q0MIGdiSpv6GCm0JviY71cLutJN6p2L3HbpB9CKl3G7yok+z8X5DyJjE4pIIYmACItadwKMYkaGxkIa936KbJXjzM="
+install:
+  - 'echo ''{ "experimental": true }'' | sudo tee /etc/docker/daemon.json'
+  - sudo systemctl restart docker
+  - sudo apt-get --yes --no-install-recommends install qemu-user-static
+before_script:
+  - sudo ./prepare-qemu
+  - chmod -R g-w ./
+script:
+  - ./build.sh
+after_success:
+  - '[ "$TRAVIS_PULL_REQUEST" == "false" ] && docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && ./push'
+
+jobs:
+  include:
+    - stage: deploy
+      name: "Create Manifest"
+      install: 'mkdir $HOME/.docker/ && echo ''{ "experimental": "enabled" }'' > $HOME/.docker/config.json'
+      before_script: docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      script: ./create-manifest
