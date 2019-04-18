@@ -17,13 +17,3 @@ before_script:
   - chmod -R g-w ./
 script:
   - sh -x build.sh
-after_success:
-  - '[ "$TRAVIS_PULL_REQUEST" == "false" ] && docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && ./push'
-
-jobs:
-  include:
-    - stage: deploy
-      name: "Create Manifest"
-      install: 'mkdir $HOME/.docker/ && echo ''{ "experimental": "enabled" }'' > $HOME/.docker/config.json'
-      before_script: docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-      script: ./create-manifest
