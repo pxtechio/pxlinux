@@ -16,7 +16,7 @@ before_script:
   - sudo ./prepare-qemu.sh
   - chmod -R g-w ./
 script:
-  - ./build.sh
+  - sh -x build.sh
 after_success:
   - '[ "$TRAVIS_PULL_REQUEST" == "false" ] && docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && ./push'
 
