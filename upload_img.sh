@@ -34,9 +34,9 @@ FILE_TARGET_NAME=$2
 MONTHLY=$(date +%Y-%m)
 WEEKLY=$(date +%V)
 
-IFS='.' read -ra ARR <<< "$FILE_TARGET_NAME"
+#IFS='.' read -ra ARR <<< "$FILE_TARGET_NAME"
 
 aws s3 cp $FILE s3://pxlinux/LATEST/$FILE_TARGET_NAME
-aws s3 cp $FILE s3://pxlinux/monthly/${ARR[0]}$MONTHLY"."${ARR[1]}
-aws s3 cp $FILE s3://pxlinux/weekly/${ARR[0]}$WEEKLY"."${ARR[1]}
+#aws s3 cp $FILE s3://pxlinux/monthly/${ARR[0]}$MONTHLY"."${ARR[1]}
+#aws s3 cp $FILE s3://pxlinux/weekly/${ARR[0]}$WEEKLY"."${ARR[1]}
 
