@@ -12,6 +12,7 @@ install:
   - 'echo ''{ "experimental": true }'' | sudo tee /etc/docker/daemon.json'
   - sudo systemctl restart docker
   - sudo apt-get --yes --no-install-recommends install qemu-user-static
+  - sudo apt-get --yes --no-install-recommends install awscli
 before_script:
   - sudo ./prepare-qemu.sh
   - chmod -R g-w ./
