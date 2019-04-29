@@ -7,6 +7,7 @@ docker run --user=root -it --rm --privileged \
   pxtech/pxlinux-ci:latest
 
 sudo chown travis:travis /home/travis/build/pxtechio/pxlinux/pxboard/base/assets/images/PXBoardQP4G-latest.img
+rm /home/travis/build/pxtechio/pxlinux/pxboard/base/assets/images/PXBoardQP4G-latest.img.zip
 zip /home/travis/build/pxtechio/pxlinux/pxboard/base/assets/images/PXBoardQP4G-latest.img.zip /home/travis/build/pxtechio/pxlinux/pxboard/base/assets/images/PXBoardQP4G-latest.img
 
 sh -x upload_img.sh /home/travis/build/pxtechio/pxlinux/pxboard/base/assets/images/PXBoardQP4G-latest.img.zip PXBoardQP4G-latest.img.zip
