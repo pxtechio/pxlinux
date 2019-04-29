@@ -7,6 +7,9 @@ Targets:
       BaseImage:
         path: assets/images/PXBoardQP4G-latest.img
         url: https://s3-us-west-1.amazonaws.com/pxlinux/LATEST/PXBoardQP4G-latest.img.zip
+      Packages:
+        path: assets/packages #All .pkg.tar.xz files and packages listed in pacman_packages.txt will be installed.
+      
 
 #  PXBoardQ:
  #   Name: PXBoardQ
