@@ -1,0 +1,67 @@
+%NAME%
+gnupg
+
+%VERSION%
+2.2.36-1
+
+%BASE%
+gnupg
+
+%DESC%
+Complete and free implementation of the OpenPGP standard
+
+%URL%
+https://www.gnupg.org/
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1657237243
+
+%INSTALLDATE%
+1660096429
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+xu4@archlinuxarm.org>
+
+%SIZE%
+9930403
+
+%REASON%
+1
+
+%LICENSE%
+BSD
+custom
+CC0
+GPL2
+GPL3
+LGPL3
+LGPL2.1
+MIT
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+npth
+libgpg-error
+libgcrypt
+libksba
+libassuan
+pinentry
+bzip2
+libbz2.so=1.0-32
+readline
+libreadline.so=8-32
+gnutls
+sqlite
+zlib
+glibc
+
+%OPTDEPENDS%
+libldap: gpg2keys_ldap
+libusb-compat: scdaemon
+pcsclite: scdaemon
+

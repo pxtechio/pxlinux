@@ -1,0 +1,57 @@
+%NAME%
+gnutls
+
+%VERSION%
+3.7.7-1
+
+%BASE%
+gnutls
+
+%DESC%
+A library which provides a secure layer over a reliable transport layer
+
+%URL%
+https://www.gnutls.org/
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1659816650
+
+%INSTALLDATE%
+1660096429
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+xu4@archlinuxarm.org>
+
+%SIZE%
+5869570
+
+%REASON%
+1
+
+%LICENSE%
+GPL3
+LGPL2.1
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+gcc-libs
+libtasn1
+readline
+zlib
+nettle
+p11-kit
+libidn2
+libidn2.so=0-32
+libunistring
+brotli
+
+%OPTDEPENDS%
+guile: for use with Guile bindings
+tpm2-tss: support for TPM2 wrapped keys
+zstd: for compression support
+

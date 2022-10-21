@@ -1,0 +1,60 @@
+%NAME%
+glib2
+
+%VERSION%
+2.72.3-1
+
+%BASE%
+glib2
+
+%DESC%
+Low level core library
+
+%URL%
+https://wiki.gnome.org/Projects/GLib
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1656731635
+
+%INSTALLDATE%
+1660096427
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+xu4@archlinuxarm.org>
+
+%SIZE%
+15881555
+
+%REASON%
+1
+
+%LICENSE%
+LGPL
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+pcre
+libffi
+util-linux-libs
+zlib
+libsysprof-capture
+libmount.so=1-32
+libffi.so=8-32
+
+%OPTDEPENDS%
+python: gdbus-codegen, glib-genmarshal, glib-mkenums, gtester-report
+libelf: gresource inspection tool
+gvfs: most gio functionality
+
+%PROVIDES%
+libgio-2.0.so=0-32
+libglib-2.0.so=0-32
+libgmodule-2.0.so=0-32
+libgobject-2.0.so=0-32
+libgthread-2.0.so=0-32
+

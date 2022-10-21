@@ -1,20 +1,20 @@
 Targets:
   PXBoardQP4G: #All options enabled
     Name: PXBoardQP4G
-    TargetImage: assets/images/PXBoardQP4G-latest.img
+    TargetImage: ../pxlinx/pxboard/gnome-wayland/assets/images/PXBoardQP4G-latest.img
     SkipUpdate: False
     Assets:
       BaseImage:
-        path: assets/images/PixieQP4GCoreImage-2018-11-13.img
+        path: ../pxlinx/pxboard/gnome-wayland/assets/images/PixieQP4GCoreImage-2018-11-13.img
         url: https://code-ing.com/pixierepo/release/images/latest/PixieQP4GCoreImage.zip
       U-Boot:
-        path: assets/uboot/u-boot-dtb-qp4.imx
+        path: ../pxlinx/pxboard/gnome-wayland/assets/uboot/u-boot-dtb-qp4.imx
       RootFS:
-        path: assets/rootfs #Directory structure in this path is preserved from '/'. Destination can't be symlink.
+        path: ../pxlinx/pxboard/gnome-wayland/assets/rootfs #Directory structure in this path is preserved from '/'. Destination can't be symlink.
       Packages:
-        path: assets/packages #All .pkg.tar.xz files and packages listed in pacman_packages.txt will be installed.
+        path: ../pxlinx/pxboard/gnome-wayland/assets/packages #All .pkg.tar.xz files and packages listed in pacman_packages.txt will be installed.
       Scripts:
-        path: assets/update-scripts
+        path: ../pxlinx/pxboard/gnome-wayland/assets/update-scripts
 
 
 BuildCommand:

@@ -1,0 +1,56 @@
+%NAME%
+e2fsprogs
+
+%VERSION%
+1.46.5-4
+
+%BASE%
+e2fsprogs
+
+%DESC%
+Ext2/3/4 filesystem utilities
+
+%URL%
+http://e2fsprogs.sourceforge.net
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1655901062
+
+%INSTALLDATE%
+1660096415
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+xu2@archlinuxarm.org>
+
+%SIZE%
+4981646
+
+%REASON%
+1
+
+%LICENSE%
+GPL
+LGPL
+MIT
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+sh
+util-linux-libs
+
+%OPTDEPENDS%
+lvm2: for e2scrub
+util-linux: for e2scrub
+smtp-forwarder: for e2scrub_fail script
+
+%PROVIDES%
+libcom_err.so=2-32
+libe2p.so=2-32
+libext2fs.so=2-32
+libss.so=2-32
+

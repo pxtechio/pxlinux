@@ -1,0 +1,49 @@
+%NAME%
+glibc
+
+%VERSION%
+2.35-5.1
+
+%BASE%
+glibc
+
+%DESC%
+GNU C Library
+
+%URL%
+https://www.gnu.org/software/libc
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1653762707
+
+%INSTALLDATE%
+1660096408
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+xu0@archlinuxarm.org>
+
+%SIZE%
+40822202
+
+%REASON%
+1
+
+%LICENSE%
+GPL
+LGPL
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+linux-api-headers>=4.10
+tzdata
+filesystem
+
+%OPTDEPENDS%
+gd: for memusagestat
+perl: for mtrace
+

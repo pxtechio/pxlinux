@@ -1,0 +1,52 @@
+%NAME%
+openssh
+
+%VERSION%
+9.0p1-1
+
+%BASE%
+openssh
+
+%DESC%
+Premier connectivity tool for remote login with the SSH protocol
+
+%URL%
+https://www.openssh.com/portable.html
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1649894904
+
+%INSTALLDATE%
+1660096435
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+xu4@archlinuxarm.org>
+
+%SIZE%
+5688280
+
+%LICENSE%
+custom:BSD
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+glibc
+krb5
+openssl
+libedit
+ldns
+libxcrypt
+libcrypt.so=2-32
+zlib
+pam
+
+%OPTDEPENDS%
+xorg-xauth: X11 forwarding
+x11-ssh-askpass: input passphrase in X
+libfido2: FIDO/U2F support
+

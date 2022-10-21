@@ -1,0 +1,28 @@
+Targets:
+  PXBoardQP4G: #All options enabled
+    Name: PXBoardQP4G
+    TargetImage: assets/images/PXBoardQP4G-archlinuxarm-2022-10-20.img
+    SkipUpdate: False
+    Assets:
+      BaseImage:
+        path: assets/images/PXBoardQP4G-2022-10-19.img
+        url: https://pxlinux.s3.us-west-1.amazonaws.com/2022/PXBoardQP4G-2022-10-19.zip
+      U-Boot:
+        path: assets/uboot/u-boot-dtb-qp4.imx
+      RootFS:
+        path: assets/rootfs #Directory structure in this path is preserved from '/'. Destination can't be symlink.
+      Packages:
+        path: assets/packages #All .pkg.tar.xz files and packages listed in pacman_packages.txt will be installed.
+      Scripts:
+        path: assets/update-scripts
+
+
+BuildCommand:
+  cmd: helper_scripts/build_img.sh
+  params:
+    - BaseImage
+    - TargetImage
+    - U-Boot
+    - RootFS
+    - Packages
+    - Scripts
